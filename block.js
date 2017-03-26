@@ -51,7 +51,7 @@ if(blockName) {
                     fileContent = '@import \"../../scss/variables.scss\";   \n@import \"../../scss/mixins.scss\";  \n/* шаблон вставки в html \n\n*/   \n\n.' + blockName + ' {\n  \n}\n';
                     // fileCreateMsg = '[NTH] Для импорта стилей: ' + SCSSfileImport;
 
-                    // Создаем регулярку с импортом
+                    // Создаем  регулярку с импортом
                     let reg = new RegExp(SCSSfileImport, '');
 
                     // Создадим флаг отсутствия блока среди импортов
