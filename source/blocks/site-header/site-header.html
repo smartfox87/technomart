@@ -1,0 +1,39 @@
+<header class="site-header">
+    <div class="site-header__top">
+        <div class="site-header__wrapper">@@include("../logo/logo.html")
+            <form action="index.html" method="get" class="site-header__info-panel">
+                <label class="site-header__search" for="field__search">
+                    <input type="text" name="search" id="field__search" placeholder="Поиск">
+                </label>
+                <label class="site-header__favorites" for="field__favorites">Закладки:
+                    <input type="text" name="favorites" id="field__favorites" value="0" readonly>
+                </label>
+                <label class="site-header__basket" for="field__basket">Корзина:
+                    <input type="text" name="basket" id="field__basket" value="0" readonly>
+                </label>
+                <a class="site-header__to-order" href="#">Оформить заказ</a>
+            </form>
+        </div>
+    </div>
+    <div class="site-header__wrapper">
+        <div class="site-header__middle">
+            <div class="site-header__text">
+                Интернет-магазин
+                строительных материалов
+                и инструментов для ремонта
+            </div>
+            <div class="site-header__contact">
+                @@include("../phone-number/phone-number.html")
+                <p>
+                    г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
+                </p>
+            </div>
+            <div class="site-heder__user-block">
+                @@include("../user-menu/user-menu.html")
+            </div>
+        </div>
+        <div class="site-header__bottom">
+            @@include("../main-menu/main-menu.html")
+        </div>
+    </div>
+</header>

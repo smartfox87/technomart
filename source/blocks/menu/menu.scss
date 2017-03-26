@@ -1,0 +1,50 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+/* шаблон вставки в html
+@@include("../menu/menu.html", {
+"second-class": "menu--",
+"item1-href": "#",
+"item2-href": "#",
+"item3-href": "#",
+"item4-href": "#",
+"item5-href": "#",
+"item1-name": "",
+"item2-name": "",
+"item3-name": "",
+"item4-name": "",
+"item5-name": "",
+"item1-class": "menu__item",
+"item2-class": "menu__item",
+"item3-class": "menu__item",
+"item4-class": "menu__item",
+"item5-class": "menu__item"
+})
+*/
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  li {
+    display: none;
+
+    margin-right: 50px;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  a{
+    @include font();
+    color: #f1f5f7;
+    text-decoration: none;
+  }
+}
+
+.menu .menu__item {
+  display: block;
+}

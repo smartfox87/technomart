@@ -1,0 +1,50 @@
+<div class="about-us">
+    <div class="about-us__wrapper">
+        <div class="about-us__column-left">
+            <h2>
+                Компания «Техномарт»
+            </h2>
+            <p>
+                Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и строительства не
+                оставит равнодушными любителей сэкномить на гастарбайтерах.
+            </p>
+            <p>
+                Мы можем доставить ваш товар в самые отдаленные точки России! <br>
+                Техномарт работает со многими транспортными компаниями:
+            </p>
+
+            @@include("../custom-list/custom-list.html", {
+            "second-class": "custom-list--about-us",
+            "content1": "Деловые линии",
+            "content2": "Автотрейдинг",
+            "content3": "ЖелДорЭкспедиция"
+            })
+
+            @@include("../btn/btn.html", {
+            "class": "btn--about-us",
+            "name": "Подробнее о компании",
+            "href": "#"
+            })
+
+        </div>
+        <div class="about-us__column-right">
+            <h2>
+                Контакты
+            </h2>
+            <p>
+                Вы можете забрать товар сами, <br>
+                заехав в наш офис:
+            </p>
+            <div class="services__map">
+
+            </div>
+
+            @@include("../btn/btn.html", {
+            "class": "btn--max-width",
+            "name": "Заблудились? Напишите нам",
+            "href": "#"
+            })
+
+        </div>
+    </div>
+</div>

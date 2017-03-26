@@ -1,0 +1,95 @@
+<div class="site-footer">
+    <div class="site-footer__top">
+        <div class="site-footer__wrapper">
+            <div class="site-footer__adress">
+                
+                @@include("../logo/logo.html")
+                
+                <p>
+                    г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 <br>
+                    +7 (812) 555-05-55
+                </p>
+            </div>
+            <div class="site-footer__menu">
+
+                @@include("../menu/menu.html", {
+                "second-class": "menu--",
+                "item1-href": "#",
+                "item2-href": "#",
+                "item3-href": "#",
+                "item4-href": "#",
+                "item5-href": "#",
+                "item1-name": "Компания",
+                "item2-name": "Новости",
+                "item3-name": "Каталог",
+                "item4-name": "Доставка",
+                "item5-name": "Контакты",
+                "item1-class": "menu__item",
+                "item2-class": "menu__item",
+                "item3-class": "menu__item",
+                "item4-class": "menu__item",
+                "item5-class": "menu__item"
+                })
+
+                @@include("../menu/menu.html", {
+                "second-class": "menu--",
+                "item1-href": "#",
+                "item2-href": "#",
+                "item3-href": "#",
+                "item4-href": "#",
+                "item5-href": "#",
+                "item1-name": "Материалы",
+                "item2-name": "Техника",
+                "item3-name": "Инструмент",
+                "item4-name": "Спецпредложения",
+                "item5-name": "",
+                "item1-class": "menu__item",
+                "item2-class": "menu__item",
+                "item3-class": "menu__item",
+                "item4-class": "menu__item",
+                "item5-class": "menu__item"
+                })
+
+            </div>
+        </div>
+    </div>
+    <div class="site-footer__bottom">
+        <div class="site-footer__wrapper">
+            <div class="site-footer__copyright">
+                <p>
+                    © 2010–2016 Компания «Техномарт» <br>
+                    Все права защищены
+                </p>
+            </div>
+
+            <div class="site-footer__social">
+
+                @@include("../social/social.html", {
+                "second-class": "social--fonts",
+                "vk-href": "#",
+                "fb-href": "#",
+                "inst-href": "#",
+                "vk-content": "",
+                "fb-content": "",
+                "inst-content": "",
+                "vk-class": "social__item",
+                "fb-class": "social__item",
+                "inst-class": "social__item"
+                })
+
+            </div>
+
+            <div class="site-footer__developer">
+                <p>
+                    Обратная связь:
+                    <a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+                </p>
+                <p>
+                    Разработано —
+                    <a href="http://www.htmlacademy.ru">htmlacademy.ru</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>

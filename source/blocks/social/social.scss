@@ -1,0 +1,107 @@
+@import "../../scss/variables.scss";
+@import "../../scss/mixins.scss";
+
+/* шаблон вставки в html 
+@@include("../social/social.html", {
+"second-class": "social--",
+"vk-href": "#",
+"fb-href": "#",
+"inst-href": "#",
+"tw-href": "#",
+"ok-href": "#",
+"vk-content": "Мы Вконтакте",
+"fb-content": "Мы в Фейсбуке",
+"inst-content": "Мы в Инстаграм",
+"tw-content": "Мы в Твиттере",
+"ok-content": "Мы в Одноклассниках",
+"vk-class": "social__item",
+"fb-class": "social__item",
+"inst-class": "social__item",
+"tw-class": "social__item",
+"ok-class": "social__item"
+})
+*/
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  li {
+    display: none;
+
+    margin-right: 5px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  a {
+    position: relative;
+
+    display: block;
+
+    color: #fff;
+  }
+}
+
+.social .social__item {
+  display: block;
+}
+
+.social--fonts {
+  a {
+    content: "";
+
+    width: 42px;
+    height: 42px;
+
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1em;
+    font-family: "symbols-technomart";
+    text-align: center;
+    color: #fff;
+    text-transform: none;
+    text-decoration: inherit;
+    font-style: normal;
+    font-variant: normal;
+
+    background: #212a3a;
+    border-radius: 50%;
+    &::before {
+      position: absolute;
+    }
+  }
+
+}
+
+.social__item--vk {
+  a {
+    &::before {
+      content: "\76";
+      left: 9px;
+      top: 9px;
+    }
+  }
+}
+.social__item--fb {
+  a {
+    &::before {
+      content: "\66";
+      left: 5px;
+      top: 5px;
+    }
+  }
+}
+.social__item--inst {
+  a {
+    &::before {
+      content: "📷";
+      left: 5px;
+      top: 5px;
+    }
+  }
+}

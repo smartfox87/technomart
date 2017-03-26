@@ -1,0 +1,35 @@
+@import '../../scss/variables.scss';   
+@import '../../scss/mixins.scss';    
+
+.about-us {
+  padding-bottom: 86px;
+}
+.about-us__wrapper{
+  @include container();
+  display: flex;
+  justify-content: space-between;
+}
+.about-us__column-left{
+  width: 540px;
+
+  outline: 1px solid blue;
+}
+.about-us__column-right{
+  width: 300px;
+
+  outline: 1px solid blue;
+}
+h2 {
+  @include font--title();
+  margin: 60px 0 30px;
+  padding: 0;
+}
+
+p {
+  @include font--text();
+  margin: 0 0 34px;
+  padding: 0;
+}
+.services__map{
+  height: 236px;
+}

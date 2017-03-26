@@ -1,0 +1,47 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.site-footer {
+  outline: 1px solid blue;
+}
+
+.site-footer__top {
+  height: 193px;
+
+  background: #32425c;
+}
+
+.site-footer__top .site-footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.site-footer__adress {
+  p {
+    @include font();
+    color: #fff;
+  }
+}
+
+.site-footer__bottom {
+  height: 107px;
+
+  background: #293449;
+}
+
+.site-footer__bottom .site-footer__wrapper {
+  display: flex;
+}
+
+.site-footer__copyright {
+  p {
+    @include font();
+    font-size: 16px;
+    line-height: 21px;
+    color: #fff;
+  }
+}
+
+.site-footer__developer{
+  display: flex;
+}

@@ -1,0 +1,44 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.features {
+  box-sizing: border-box;
+  height: 521px;
+  padding: 59px 0 53px;
+
+  font-size: 0;
+}
+
+.features__wrapper {
+  @include container;
+
+  outline: 1px solid black;
+}
+
+.features__item {
+  display: inline-block;
+
+  width: 300px;
+  height: 123px;
+  margin-bottom: 20px;
+
+  font-size: 24px;
+  vertical-align: top;
+
+  outline: 1px solid blue;
+}
+
+.features__slider {
+  float: left;
+
+  margin-right: 20px;
+}
+
+.features__top {
+  .features__item {
+    margin-right: 20px;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+}

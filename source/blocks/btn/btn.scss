@@ -1,0 +1,59 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+/*
+@@include("../btn/btn.html", {
+"class": "btn--",
+"name": "",
+"href": "#"
+})
+*/
+
+.btn {
+  display: inline-block;
+
+  padding: 10px 10px;
+
+  font-size: 14px;
+  line-height: 18px;
+  font-family: "Cuprum", sans-serif;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  background: #ee3643;
+  border-radius: 4px;
+}
+
+.btn--features {
+  width: 135px;
+}
+
+.btn--slider {
+  width: 195px;
+}
+
+.btn--price-item {
+  position: relative;
+
+  width: 115px;
+  margin-left: 40px;
+
+  font-weight: bold;
+  font-size: 17px;
+  font-family: "PT Sans", sans-serif;
+  &::after {
+    content: "";
+    position: absolute;
+
+    display: block;
+  }
+}
+
+.btn--section-title {
+
+}
+
+.btn--services-content {
+
+}

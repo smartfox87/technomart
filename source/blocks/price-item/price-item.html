@@ -1,0 +1,13 @@
+<div class="price-item  @@class">
+    <div class="price-item__image">
+        <img src="@@img-src" width="@@img-width" height="@@img-height" alt="@@img-alt">
+    </div>
+    <h3>@@title</h3>
+    <p class="price-item__old-cost">@@old-cost</p>
+
+    @@include("../btn/btn.html", {
+    "name": "@@cost",
+    "class": "btn--price-item",
+    "href": "@@item-link"})
+
+</div>

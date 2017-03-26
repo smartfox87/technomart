@@ -1,0 +1,23 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.popular-items {
+  outline: 1px solid red;
+}
+
+.popular-items__wrapper {
+  @include container();
+}
+
+.popular-items__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.popular-items__item {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+}

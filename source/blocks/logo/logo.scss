@@ -1,0 +1,20 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+/* шаблон вставки в html
+@@include("../logo/logo.html", {
+"second-class": "logo--"
+})
+*/
+
+.logo {
+  @include font--title();
+  display: inline-block;
+
+  margin: 0;
+  padding: 0;
+
+  color: #fff;
+
+  background: #ee3643;
+}

@@ -1,0 +1,35 @@
+@mixin container() {
+  width: 940px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+@mixin font() {
+  font-size: $font__size;
+  line-height: $line-height;
+  font-weight: $font__weight;
+  font-family: $font__family;
+  color: $color;
+}
+
+@mixin font--title() {
+  font-size: $font__size--title;
+  line-height: $line-height--title;
+  font-weight: $font__weight--title;
+  font-family: $font__family--title;
+  color: $color--title;
+  text-transform: $text-transform--title;
+}
+
+@mixin font--text() {
+  font-size: $font__size--text;
+  line-height: $line-height--text;
+  font-weight: $font__weight--text;
+  font-family: $font__family--text;
+  color: $color--text;
+}
+
+@mixin img-size() {
+  min-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,44 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.price-item {
+  box-sizing: border-box;
+  width: 220px;
+  height: 318px;
+
+  font-family: "PT Sans", sans-serif;
+
+  outline: 1px solid black;
+  h3 {
+    margin: 0;
+    padding: 0 20px;
+    padding-bottom: 12px;
+
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+  }
+}
+
+.price-item__image{
+  height: 180px;
+}
+
+.price-item__old-cost {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 8px;
+
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 22px;
+  text-align: center;
+  color: #999999;
+  text-decoration: line-through;
+}
+
+.price-item--bfg9000 {
+  img {
+    margin-left: 12px;
+  }
+}

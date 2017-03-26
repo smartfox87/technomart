@@ -1,0 +1,57 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.services {
+  box-sizing: border-box;
+  padding-top: 3px;
+
+  background: #f2f6f8;
+}
+
+.services__wrapper {
+  @include container();
+}
+
+h2 {
+  @include font--title();
+  margin: 60px 0 30px;
+  padding: 0;
+}
+
+p {
+  @include font--text();
+  margin: 0 0 34px;
+  padding: 0;
+}
+
+.services__list {
+  width: 240px;
+  height: 183px;
+  margin: 0;
+  padding: 39px 0 101px;
+
+  list-style: none;
+
+  outline: 1px solid black;
+}
+
+.services__item{
+  position: relative;
+}
+
+.services__categorie-name {
+  margin: 0;
+  padding: 15px;
+
+  font-size: 21px;
+  line-height: 30px;
+  color: #fff;
+
+  background: #32425c;
+}
+
+.services__categorie-content{
+  position: absolute;
+
+  display: none;
+}

@@ -1,0 +1,20 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+  padding: 25px 15px;
+
+  background: #f7f3ec;
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.section-title__link {
+  vertical-align: middle;
+}

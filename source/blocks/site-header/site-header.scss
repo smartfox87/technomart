@@ -1,0 +1,67 @@
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+.site-header {
+  box-sizing: border-box;
+  padding-bottom: 60px;
+
+  background: #f1f5f7;
+  outline: 1px solid black;
+}
+
+.site-header__top {
+  height: 42px;
+
+  color: #fff;
+
+  background: #293449;
+  input {
+    width: 30px;
+
+    color: #fff;
+
+    background: #293449;
+    border: none;
+    outline: none;
+  }
+}
+
+.site-header__top .site-header__wrapper {
+  display: flex;
+}
+
+.site-header__search {
+  input {
+    width: 200px;
+
+    color: #fff;
+  }
+}
+
+.site-header__middle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.site-header__text {
+  width: 300px;
+  height: 158px;
+
+  outline: 1px solid blue;
+}
+
+.site-header__contact {
+  width: 300px;
+
+  outline: 1px solid blue;
+}
+
+.site-heder__user-block {
+  width: 300px;
+
+  outline: 1px solid blue;
+}
+
+.site-header__bottom {
+  @include container();
+}
