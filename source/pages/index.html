@@ -6,9 +6,17 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-
+@@include("../blocks/site-header/site-header.html")
+<main>
+    @@include("../blocks/features/features.html")
+    @@include("../blocks/popular-items/popular-items.html")
+    @@include("../blocks/popular-manufacturers/popular-manufacturers.html")
+    @@include("../blocks/services/services.html")
+    @@include("../blocks/about-us/about-us.html")
+</main>
+@@include("../blocks/site-footer/site-footer.html")
 </body>
 </html>

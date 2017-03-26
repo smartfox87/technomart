@@ -47,8 +47,8 @@ if(blockName) {
 
                 // Если это SCSS
                 if(extention == 'scss') {
-                    SCSSfileImport = '@import \'' + dirs.source + '/blocks/' + blockName + '/' + blockName + '.scss\';';
-                    fileContent = '// Для импорта в диспетчер подключений: ' + SCSSfileImport + '\n\n@import \'../../scss/variables.scss\';     // только для удобства обращения к переменным\n\n\n.' + blockName + ' {\n  \n}\n';
+                    SCSSfileImport = "@import \"" + "../blocks/" + blockName + "/" + blockName + ".scss\";";
+                    fileContent = '@import \"../../scss/variables.scss\";   \n@import \"../../scss/mixins.scss\";  \n/* шаблон вставки в html \n\n*/   \n\n.' + blockName + ' {\n  \n}\n';
                     // fileCreateMsg = '[NTH] Для импорта стилей: ' + SCSSfileImport;
 
                     // Создаем регулярку с импортом
@@ -91,6 +91,7 @@ if(blockName) {
 
                 // Если это html
                 else if(extention == 'html') {
+                    fileContent = '<div class="' + blockName + '">\n\n</div>\n';
                     fileCreateMsg = '[NTH] Для вставки разметки: @@include(\'blocks/' + blockName + '/' + blockName + '.html\') Подробнее: https://www.npmjs.com/package/gulp-file-include';
                 }
 
