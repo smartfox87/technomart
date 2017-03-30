@@ -1,18 +1,74 @@
-@import '../../scss/variables.scss';   
-@import '../../scss/mixins.scss';    
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
 
 .slider {
+  position: relative;
+
   width: 620px;
   height: 266px;
 
   background: #f2f6f8;
-  h2{
+  h2 {
+    @include font();
     margin: 0;
     padding: 0;
+
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 40px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  p {
+    @include font--text();
+    margin: 0;
+    padding: 0;
+
+    font-size: 18px;
+    color: #fff;
   }
 }
-.slider__slide-perforators{
+
+.slider__toggle {
+  @include font--icon();
+  position: absolute;
+  z-index: 20;
+
+  font-size: 45px;
+  color: #fff;
 }
-.slider__slide-drills{
+
+.slider__togggle--prev {
+  top: 111px;
+  left: 5px;
+}
+
+.slider__togggle--next {
+  top: 111px;
+  right: 0;
+}
+
+.slider__slide-perforators,
+.slider__slide-drills {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  width: 620px;
+  height: 266px;
+  padding: 20px 24px 22px;
+
+  background-image: url("../img/bg-slider__perforators.jpg");
+}
+
+.slider__slide-drills {
   display: none;
+
+  background-image: url("../img/bg-slider__drills.jpg");
+
 }

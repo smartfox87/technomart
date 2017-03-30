@@ -5,11 +5,12 @@
   display: flex;
   justify-content: space-between;
 
-  margin-bottom: 20px;
-  padding: 25px 15px;
+  margin-bottom: 21px;
+  padding: 24px 24px 24px 26px;
 
   background: #f7f3ec;
   h2 {
+    @include font--title();
     margin: 0;
     padding: 0;
   }

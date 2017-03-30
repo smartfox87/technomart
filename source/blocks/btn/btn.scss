@@ -1,6 +1,7 @@
 @import '../../scss/variables.scss';
 @import '../../scss/mixins.scss';
-/*
+
+/* шаблон вставки в html
 @@include("../btn/btn.html", {
 "class": "btn--",
 "name": "",
@@ -9,13 +10,13 @@
 */
 
 .btn {
+  @include font();
   display: inline-block;
 
   padding: 10px 10px;
 
   font-size: 14px;
   line-height: 18px;
-  font-family: "Cuprum", sans-serif;
   text-align: center;
   color: #fff;
   text-transform: uppercase;
@@ -25,35 +26,75 @@
   border-radius: 4px;
 }
 
+.btn--info-panel {
+  width: 130px;
+
+  font-size: 17px;
+  line-height: 22px;
+  text-transform: none;
+
+  background: #63a63e;
+  border-radius: 0;
+}
+
 .btn--features {
-  width: 135px;
+  width: 115px;
+  margin-left: 2px;
 }
 
 .btn--slider {
-  width: 195px;
+  width: 173px;
+  margin-top: auto;
+  padding-left: 13px;
 }
 
 .btn--price-item {
+  @include font--text();
   position: relative;
 
-  width: 115px;
-  margin-left: 40px;
+  box-sizing: border-box;
+  width: 125px;
+  margin-top: auto;
+  margin-left: 42px;
+  padding-left: 20px;
 
   font-weight: bold;
   font-size: 17px;
-  font-family: "PT Sans", sans-serif;
+  line-height: 18px;
+  color: #fff;
   &::after {
-    content: "";
-    position: absolute;
-
-    display: block;
+    @include pseudo();
+    @include triangle(#ee3643, right, 19px);
+    top: 0;
+    right: 2px;
   }
 }
 
 .btn--section-title {
-
+  width: 229px;
+  padding-left: 14px;
 }
 
 .btn--services-content {
+  box-sizing: border-box;
+  width: 196px;
+}
 
+.btn--user-menu {
+  font-size: 21px;
+  line-height: 25px;
+  color: #000;
+  text-transform: none;
+
+  background: #fff;
+  border-radius: 0;
+}
+
+.btn--about-us{
+  box-sizing: border-box;
+  min-width: 220px;
+}
+
+.btn--max-width{
+  display: block;
 }

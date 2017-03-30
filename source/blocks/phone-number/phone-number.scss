@@ -1,6 +1,40 @@
-@import '../../scss/variables.scss';   
-@import '../../scss/mixins.scss';    
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
+
+/* шаблон вставки в html
+@@include("../phone-number/phone-number.html", {
+"second-class": "",
+"number": ""
+})
+*/
 
 .phone-number {
-  
+  @include font();
+  position: relative;
+
+  display: inline-block;
+
+  padding: 5px 50px 5px 73px;
+
+  font-size: 21px;
+  line-height: 30px;
+  color: #e9292a;
+
+  border: 2px solid #fff;
+  i {
+    &::before {
+      @include font--icon();
+      content: "📞";
+      position: absolute;
+      top: 9px;
+      left: 10px;
+
+      display: block;
+
+      width: 22px;
+
+      font-size: 22px;
+      color: #b7bfc8;
+    }
+  }
 }

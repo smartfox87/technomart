@@ -1,17 +1,12 @@
 @import '../../scss/variables.scss';
 @import '../../scss/mixins.scss';
 
-.site-footer {
-  outline: 1px solid blue;
-}
-
 .site-footer__top {
-  height: 193px;
-
   background: #32425c;
 }
 
 .site-footer__top .site-footer__wrapper {
+  @include container();
   display: flex;
   justify-content: space-between;
 }
@@ -19,29 +14,63 @@
 .site-footer__adress {
   p {
     @include font();
+    margin: 0;
+    padding: 32px 0 50px 2px;
+
     color: #fff;
   }
 }
 
-.site-footer__bottom {
-  height: 107px;
+.site-footer__menu {
+  padding-top: 16px;
+}
 
+.site-footer__bottom {
   background: #293449;
 }
 
 .site-footer__bottom .site-footer__wrapper {
+  @include container();
   display: flex;
+  justify-content: space-between;
 }
 
 .site-footer__copyright {
+  max-width: 300px;
   p {
     @include font();
+    margin: 0;
+    padding: 33px 0 0;
+
     font-size: 16px;
     line-height: 21px;
     color: #fff;
   }
 }
 
-.site-footer__developer{
+.site-footer__social {
+  padding: 36px 0 29px 46px;
+}
+
+.site-footer__developer {
+  @include font();
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  width: 300px;
+
+  font-size: 16px;
+  line-height: 18px;
+  p {
+    margin: 0;
+    padding: 37px 14px 0 0;
+
+    color: #fff;
+  }
+  a {
+    color: #ffd180;
+    text-decoration: none;
+  }
 }

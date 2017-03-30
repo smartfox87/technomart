@@ -1,4 +1,20 @@
-<div class="user-menu">
-    <a href="#" class="user-menu__login">Войти</a>
-    <a href="#" class="user-menu__join">Регистрация</a>
+<div class="user-menu @@second-class">
+    <div class="user-menu__join">
+
+        @@include("../btn/btn.html", {
+        "class": "btn--user-menu  user-menu__login",
+        "name": "Войти",
+        "href": "#"
+        })
+
+        @@include("../btn/btn.html", {
+        "class": "btn--user-menu  user-menu__register",
+        "name": "Регистрация",
+        "href": "#"
+        })
+
+    </div>
+    <div class="user-menu-joined">
+
+    </div>
 </div>

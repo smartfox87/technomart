@@ -1,0 +1,98 @@
+@import "../../scss/variables.scss";   
+@import "../../scss/mixins.scss";  
+/* шаблон вставки в html 
+
+*/   
+
+.range {
+  
+}
+.range__scale {
+  position: relative;
+
+  height: 80px;
+  margin-bottom: 15px;
+
+  background: #f1f1f1;
+}
+
+.range__scale::after,
+.range__scale::before {
+  content: "";
+  position: absolute;
+  top: 39px;
+  left: 20px;
+
+  display: block;
+
+  width: 200px;
+  height: 2px;
+
+  background: #d7dcde;
+}
+
+.range__scale::after {
+  width: 140px;
+
+  background: #00ca74;
+}
+
+.range__toggle {
+  position: relative;
+  z-index: 10;
+
+  width: 22px;
+  height: 22px;
+
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px rgba(0, 1, 1, 0.14);
+}
+
+.range__toggle::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  display: block;
+
+  width: 3px;
+  height: 3px;
+
+  background: #ababab;
+}
+
+.range__toggle--start {
+  top: 29px;
+  left: 19px;
+}
+
+.range__toggle--end {
+  top: 7px;
+  left: 159px;
+}
+
+.range label {
+  text-transform: uppercase;
+}
+
+.range__input-start {
+  margin-right: 14px;
+}
+
+.range input {
+  box-sizing: border-box;
+  width: 80px;
+  height: 37px;
+  margin-left: 5px;
+
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #000;
+
+  background: #f1f1f1;
+  border: none;
+  outline: none;
+}

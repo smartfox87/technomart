@@ -1,35 +1,38 @@
-@import '../../scss/variables.scss';   
-@import '../../scss/mixins.scss';    
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
 
 .about-us {
-  padding-bottom: 86px;
+  padding-bottom: 87px;
+  h2 {
+    @include font--title();
+    margin: 0;
+    padding: 71px 0 16px;
+  }
+  p {
+    @include font--text();
+    margin: 0;
+    padding: 5px 0 19px;
+  }
 }
-.about-us__wrapper{
+
+.about-us__wrapper {
   @include container();
   display: flex;
   justify-content: space-between;
 }
-.about-us__column-left{
+
+.about-us__column-left {
   width: 540px;
-
-  outline: 1px solid blue;
 }
-.about-us__column-right{
+
+.about-us__column-right {
   width: 300px;
-
-  outline: 1px solid blue;
-}
-h2 {
-  @include font--title();
-  margin: 60px 0 30px;
-  padding: 0;
 }
 
-p {
-  @include font--text();
-  margin: 0 0 34px;
-  padding: 0;
-}
-.services__map{
-  height: 236px;
+.services__map {
+  height: 157px;
+  margin-top: 13px;
+  margin-bottom: 41px;
+
+  background: #e5e5e5 url("../img/bg-map__page.jpg") no-repeat left top;
 }

@@ -33,7 +33,7 @@
   li {
     display: none;
 
-    margin-right: 5px;
+    margin-right: 3px;
     &:last-child {
       margin-right: 0;
     }
@@ -43,6 +43,7 @@
 
     display: block;
 
+    font-size: 0;
     color: #fff;
   }
 }
@@ -53,26 +54,17 @@
 
 .social--fonts {
   a {
-    content: "";
-
     width: 42px;
     height: 42px;
 
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 1em;
-    font-family: "symbols-technomart";
-    text-align: center;
-    color: #fff;
-    text-transform: none;
-    text-decoration: inherit;
-    font-style: normal;
-    font-variant: normal;
+    text-decoration: none;
 
     background: #212a3a;
     border-radius: 50%;
     &::before {
-      position: absolute;
+      @include pseudo();
+      @include font--icon();
+      font-size: 18px;
     }
   }
 
@@ -82,26 +74,28 @@
   a {
     &::before {
       content: "\76";
-      left: 9px;
-      top: 9px;
+      top: 10px;
+      left: 10px;
     }
   }
 }
+
 .social__item--fb {
   a {
     &::before {
       content: "\66";
-      left: 5px;
-      top: 5px;
+      top: 10px;
+      left: 15px;
     }
   }
 }
+
 .social__item--inst {
   a {
     &::before {
       content: "📷";
-      left: 5px;
-      top: 5px;
+      top: 10px;
+      left: 13px;
     }
   }
 }

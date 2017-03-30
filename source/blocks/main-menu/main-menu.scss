@@ -1,24 +1,64 @@
-@import '../../scss/variables.scss';   
+@import '../../scss/variables.scss';
 @import '../../scss/mixins.scss';
 
-.main-menu {
-  height: 60px;
+/* шаблон вставки в html
+@@include("../main-menu/main-menu.html", {
+"second-class": "main-menu--",
+"item1-class": "main-menu__item",
+"item2-class": "main-menu__item",
+"item3-class": "main-menu__item",
+"item4-class": "main-menu__item",
+"item5-class": "main-menu__item",
+"item6-class": "main-menu__item",
+"item7-class": "main-menu__item",
+"link1-href": "href="#"",
+"link2-href": "href="#"",
+"link3-href": "href="#"",
+"link4-href": "href="#"",
+"link5-href": "href="#"",
+"link6-href": "href="#"",
+"link7-href": "href="#"",
+"link1-name": "",
+"link2-name": "",
+"link3-name": "",
+"link4-name": "",
+"link5-name": "",
+"link6-name": "",
+"link7-name": ""
+})
+*/
 
-  background: #32425c;
-}
-.main-menu__list{
+.main-menu__list {
   display: flex;
+  flex-wrap: wrap;
 
   margin: 0;
   padding: 0;
 
   list-style: none;
 }
-.main-menu__item{
-  a{
-    padding: 0 30px;
 
+.main-menu__item {
+  &:first-child {
+    a {
+      padding-left: 52px;
+    }
+  }
+  &:last-child {
+    a {
+      padding-right: 54px;
+    }
+  }
+  a {
+    @include font();
+    display: block;
+
+    padding: 16px 31px 20px 30px;
+
+    font-size: 17px;
     color: #fff;
     text-decoration: none;
+
+    background: #32425c;
   }
 }

@@ -3,8 +3,6 @@
 
 .popular-manufacturers {
   padding-bottom: 65px;
-
-  outline: 1px solid blue;
 }
 
 .popular-manufacturers__wrapper {
@@ -22,13 +20,74 @@
 }
 
 .popular-manufacturers__item {
+  box-sizing: border-box;
   width: 220px;
   height: 145px;
   margin-right: 20px;
   margin-bottom: 20px;
 
-  outline: 1px solid blue;
+  border: 1px solid #e5e5e5;
   &:nth-child(4n) {
     margin-right: 0;
+  }
+  a{
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    img{
+      @include img-size();
+      position: absolute;
+    }
+  }
+}
+.popular-manufacturers__item--bosch{
+  a{
+    top: 51px;
+    left: 46px;
+  }
+}
+.popular-manufacturers__item--makita{
+  a{
+    top: 48px;
+    left: 46px;
+  }
+}
+.popular-manufacturers__item--dewalt{
+  a{
+    top: 45px;
+    left: 35px;
+  }
+}
+.popular-manufacturers__item--interskol{
+  a{
+    top: 19px;
+    left: 8px;
+  }
+}
+.popular-manufacturers__item--hitachi{
+  a{
+    top: 57px;
+    left: 26px;
+  }
+}
+.popular-manufacturers__item--lg{
+  a{
+    top: 32px;
+    left: 47px;
+  }
+}
+.popular-manufacturers__item--aeg{
+  a{
+    top: 20px;
+    left: 33px;
+  }
+}
+.popular-manufacturers__item--metabo{
+  a{
+    top: 31px;
+    left: 9px;
   }
 }

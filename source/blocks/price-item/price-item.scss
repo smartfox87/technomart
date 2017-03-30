@@ -2,17 +2,21 @@
 @import '../../scss/mixins.scss';
 
 .price-item {
+  display: flex;
+  flex-direction: column;
+
   box-sizing: border-box;
   width: 220px;
-  height: 318px;
+  min-height: 318px;
+  padding-bottom: 20px;
 
-  font-family: "PT Sans", sans-serif;
-
-  outline: 1px solid black;
+  border: 1px solid #e5e5e5;
   h3 {
+    @include font__text();
     margin: 0;
-    padding: 0 20px;
-    padding-bottom: 12px;
+    padding: 0 20px 9px;
+
+    font-weight: bold;
 
     font-size: 18px;
     line-height: 20px;
@@ -20,14 +24,48 @@
   }
 }
 
-.price-item__image{
-  height: 180px;
+.price-item--bfg9000 {
+  img {
+    top: 6px;
+    left: 16px;
+  }
+}
+
+.price-item--bfg3000 {
+img {
+    top: 28px;
+    left: 39px;
+  }
+}
+
+.price-item--bfg6000 {
+img {
+    top: 21px;
+    left: 25px;
+  }
+}
+
+.price-item--bfg2000 {
+  background: url("../img/pic-mark__new.png") no-repeat top right;
+  img {
+    top: 27px;
+    left: 30px;
+  }
+}
+
+.price-item__image {
+  position: relative;
+
+  height: 178px;
+  img{
+    @include img-size();
+    position: absolute;
+  }
 }
 
 .price-item__old-cost {
   margin: 0;
-  padding: 0;
-  padding-bottom: 8px;
+  padding: 0 0 9px;
 
   font-weight: bold;
   font-size: 17px;
@@ -37,8 +75,3 @@
   text-decoration: line-through;
 }
 
-.price-item--bfg9000 {
-  img {
-    margin-left: 12px;
-  }
-}

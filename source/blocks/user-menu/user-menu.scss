@@ -1,6 +1,42 @@
-@import '../../scss/variables.scss';   
-@import '../../scss/mixins.scss';    
+@import '../../scss/variables.scss';
+@import '../../scss/mixins.scss';
 
 .user-menu {
-  
+}
+
+.user-menu__join {
+  display: flex;
+
+  padding-bottom: 66px;
+}
+
+.user-menu .user-menu__login {
+  position: relative;
+
+  flex-grow: 1;
+
+  margin-left: 20px;
+  padding-left: 32px;
+  i {
+    &::before {
+      @include font--icon();
+      content: "\2386";
+      position: absolute;
+      top: 9px;
+      left: 13px;
+
+      display: block;
+
+      width: 22px;
+
+      font-size: 22px;
+      color: #b7bfc8;
+    }
+  }
+}
+
+.user-menu__register {
+  flex-grow: 1;
+
+  margin-left: 10px;
 }

@@ -12,15 +12,15 @@
                 <label class="site-header__favorites" for="field__favorites"><i class="icon-bookmark"> </i>Закладки:
                     <input type="text" name="favorites" id="field__favorites" value="0" readonly>
                 </label>
-                <label class="site-header__basket" for="field__basket"><i class="icon-basket"> </i>Корзина:
-                    <input type="text" name="basket" id="field__basket" value="0" readonly>
+                <label class="site-header__basket  site-header__basket--catalog" for="field__basket"><i class="icon-basket"> </i>Корзина:
+                    <input type="text" name="basket" id="field__basket" value="10" readonly>
                 </label>
 
-            @@include("../btn/btn.html", {
-            "class": "btn--info-panel",
-            "name": "Оформить заказ",
-            "href": "#"
-            })
+                @@include("../btn/btn.html", {
+                "class": "btn--info-panel",
+                "name": "Оформить заказ",
+                "href": "#"
+                })
 
             </form>
         </div>
@@ -64,9 +64,9 @@
             "item5-class": "main-menu__item",
             "item6-class": "main-menu__item",
             "item7-class": "main-menu__item",
-            "link1-href": "",
+            "link1-href": "href=\"index.html\"",
             "link2-href": "href=\"#\"",
-            "link3-href": "href=\"catalog.html\"",
+            "link3-href": "",
             "link4-href": "href=\"#\"",
             "link5-href": "href=\"#\"",
             "link6-href": "href=\"#\"",

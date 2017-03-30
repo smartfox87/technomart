@@ -1,5 +1,6 @@
 @import '../../scss/variables.scss';
 @import '../../scss/mixins.scss';
+
 /*  шаблон вставки
 @@include("../custom-list/custom-list.html", {
 "second-class": "custom-list--",
@@ -15,10 +16,26 @@
   padding: 0;
 
   list-style: none;
+  li {
+    position: relative;
+
+    padding-bottom: 16px;
+    padding-left: 36px;
+    &::before {
+      @include pseudo();
+      top: 12px;
+      left: 0;
+
+      width: 25px;
+      height: 2px;
+
+      background: #fb565a;
+    }
+  }
 }
 
 .custom-list--about-us {
-  padding-left: 20px;
+  padding-bottom: 19px;
 }
 
 

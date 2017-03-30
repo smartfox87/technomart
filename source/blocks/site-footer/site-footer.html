@@ -3,7 +3,9 @@
         <div class="site-footer__wrapper">
             <div class="site-footer__adress">
                 
-                @@include("../logo/logo.html")
+                @@include("../logo/logo.html", {
+                "second-class": "logo--footer"
+                })
                 
                 <p>
                     г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 <br>
@@ -13,7 +15,7 @@
             <div class="site-footer__menu">
 
                 @@include("../menu/menu.html", {
-                "second-class": "menu--",
+                "second-class": "menu--footer-first",
                 "item1-href": "#",
                 "item2-href": "#",
                 "item3-href": "#",
@@ -32,7 +34,7 @@
                 })
 
                 @@include("../menu/menu.html", {
-                "second-class": "menu--",
+                "second-class": "menu--footer-second",
                 "item1-href": "#",
                 "item2-href": "#",
                 "item3-href": "#",
@@ -69,9 +71,9 @@
                 "vk-href": "#",
                 "fb-href": "#",
                 "inst-href": "#",
-                "vk-content": "",
-                "fb-content": "",
-                "inst-content": "",
+                "vk-content": "Мы Вконтакте",
+                "fb-content": "Мы в Фейсбуке",
+                "inst-content": "Мы в Инстаграм",
                 "vk-class": "social__item",
                 "fb-class": "social__item",
                 "inst-class": "social__item"
@@ -81,11 +83,11 @@
 
             <div class="site-footer__developer">
                 <p>
-                    Обратная связь:
+                    Обратная связь: <br>
                     <a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
                 </p>
                 <p>
-                    Разработано —
+                    Разработано — <br>
                     <a href="http://www.htmlacademy.ru">htmlacademy.ru</a>
                 </p>
 

@@ -12,9 +12,19 @@
   display: inline-block;
 
   margin: 0;
-  padding: 0;
+  padding: 2px 53px 0;
 
+  font-weight: bold;
+
+  font-size: 24px;
   color: #fff;
 
   background: #ee3643;
+  box-shadow: 0 5px #b52933;
+}
+
+.logo--footer {
+  padding: 11px 41px 11px 34px;
+
+  font-size: 30px;
 }
