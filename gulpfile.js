@@ -8,13 +8,19 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const mqpacker = require('css-mqpacker');
 const server = require('browser-sync').create();
-const minify = require('gulp-csso');
 const rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
 const include = require('gulp-file-include');
 const sort = require('postcss-sorting');
+const sourcemaps = require('gulp-sourcemaps');
+const gulpIf = require('gulp-if');
+const newer = require('gulp-newer');
+const cssnano= require('gulp-cssnano');
 
+const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+
+// Запуск сортировки свойств в стилевых файлах
 gulp.task('sorting', function () {
     console.log('---------- сортировка SCSS');
     return gulp.src('source/blocks/**/*.scss')
@@ -274,6 +280,7 @@ gulp.task('sorting', function () {
         .pipe(gulp.dest('source/blocks'));
 });
 
+// Запуск сборки разметки страниц
 gulp.task('html', function () {
     console.log('---------- сборка HTML');
     return gulp.src('source/pages/*.html')
@@ -285,11 +292,13 @@ gulp.task('html', function () {
         .pipe(gulp.dest('build'));
 });
 
+// Запуск очистки папки сборки
 gulp.task('clean', function () {
     console.log('---------- очистка папки сборки');
     return del('build');
 });
 
+// Запуск копирования файлов в папку сборки
 gulp.task('copy', function () {
     console.log('---------- копирование файлов в папку сборки');
     return gulp.src([
@@ -302,10 +311,12 @@ gulp.task('copy', function () {
         .pipe(gulp.dest('build'));
 });
 
+// Запуск сборки стилевого файла
 gulp.task('style', function () {
     console.log('---------- сборка CSS');
     return gulp.src('source/scss/style.scss')
         .pipe(plumber({errorHandler: notify.onError()}))
+        .pipe(gulpIf(isDevelopment, sourcemaps.init()))
         .pipe(scss())
         .pipe(postcss([
             autoprefixer({
@@ -321,12 +332,14 @@ gulp.task('style', function () {
                 sort: true
             })
         ]))
+        .pipe(gulpIf(isDevelopment, sourcemaps.write()))
         .pipe(gulp.dest('build/css'))
-        .pipe(minify())
+        .pipe(cssnano())
         .pipe(rename('style.min.css'))
         .pipe(gulp.dest('build/css'));
 });
 
+// Запуск оптимизации изображений
 gulp.task('images', function () {
     console.log('---------- оптимизация изображений');
     return gulp.src('build/img/**/*.{png,img,gif}')
@@ -337,14 +350,20 @@ gulp.task('images', function () {
         .pipe(gulp.dest('build/img'));
 });
 
+// Запуск слежения за файлами
 gulp.task('watch', function () {
     console.log('---------- запуск слежения за изменениями');
     gulp.watch('source/scss/*.scss', gulp.series('style'));
     gulp.watch('source/blocks/**/*.scss', gulp.series('style'));
     gulp.watch('source/pages/*.html', gulp.series('html'));
     gulp.watch('source/blocks/**/*.html', gulp.series('html'));
+    gulp.watch(['source/fonts/**/*.{woff,woff2}',
+        'source/img/**',
+        'source/js/**'
+    ], gulp.series('copy'));
 });
 
+// Запуск сервера
 gulp.task('serve', function () {
     console.log('---------- запуск сервера');
     server.init({
@@ -355,8 +374,11 @@ gulp.task('serve', function () {
     server.watch('build/*.html').on('change', server.reload);
 });
 
+// Запуск разработки проекта
 gulp.task('default',
-    gulp.series('clean', 'copy', 'html', 'style', 'images',
+    gulp.series('clean',
+        gulp.parallel('copy', 'sorting'),
+        gulp.parallel('html', 'style', 'images'),
         gulp.parallel('watch', 'serve')));
 
 // Отправка в GH pages (ветку gh-pages репозитория)
