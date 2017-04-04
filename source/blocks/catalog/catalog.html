@@ -1,0 +1,249 @@
+<section class="catalog">
+    <div class="catalog__wrapper">
+
+        @@include("../section-title/section-title.html", {
+        "second-class": "section-title--catalog",
+        "title": "Перфораторы",
+        "link-name": "",
+        "link-class": "",
+        "link-href": "#"
+        })
+
+        <div class="catalog__content">
+            <div class="catalog__column-left">
+
+                <form class="catalog__filter" action="" method="post">
+
+                    <h2>Фильтр:</h2>
+
+                    @@include("../range/range.html", {
+                    "second-class": "range--catalog",
+                    "title": "Цена:",
+                    "start-label": "",
+                    "end-label": "—",
+                    "start-value": "0",
+                    "end-value": "30000"
+                    })
+
+
+                    @@include("../selector-checkbox/selector-checkbox-5.html", {
+                    "second-class": "",
+                    "legend": "Производители:",
+                    "label1": "Bosch",
+                    "label2": "Интерскол",
+                    "label3": "Makita",
+                    "label4": "Dewalt",
+                    "label5": "Hitachi",
+                    "checked1": "checked",
+                    "checked2": "",
+                    "checked3": "checked",
+                    "checked4": "",
+                    "checked5": ""
+                    })
+
+                    @@include("../selector-radio/selector-radio-2.html", {
+                    "second-class": "",
+                    "legend": "Питание:",
+                    "label1": "Аккумуляторные",
+                    "label2": "Сетевые",
+                    "checked1": "checked",
+                    "checked2": ""
+                    })
+
+                    @@include("../btn/btn-button.html", {
+                    "second-class": "btn--filter",
+                    "attribute": "type=\"submit\"",
+                    "text": "Показать"
+                    })
+
+                </form>
+            </div>
+
+            <div class="catalog__column-right">
+
+
+                @@include("../sorting/sorting.html", {
+                "second-class": "sorting--",
+                "title": "Сортировка:",
+                "sort1": "По цене",
+                "sort2": "По типу",
+                "sort3": "По функционалу",
+                "type1-class": "sorting__active",
+                "type2-class": "",
+                "type3-class": "",
+                "up": "По возростанию<i class=\"icon-up-dir\"></i>",
+                "down": "По убыванию<i class=\"icon-down-dir\"></i>",
+                "up-class": "sorting__active",
+                "down-class": ""
+                })
+                
+                <div class="catalog__list">
+
+                    <div class="catalog__item">
+
+                        @@include("../price-item/price-item.html", {
+                        "second-class": "price-item--bfg3000",
+                        "img-src": "img/img-item__bfg3000.png",
+                        "img-width": "127",
+                        "img-height": "112",
+                        "img-alt": "bfg3000",
+                        "title": "Перфоратор BOSCH BFG 3000",
+                        "old-cost": "22500 Р.",
+                        "cost": "15500 P.",
+                        "item-link": "#"
+                        })
+
+                    </div>
+
+                    <div class="catalog__item">
+
+                        @@include("../price-item/price-item.html", {
+                        "second-class": "price-item--bfg6000",
+                        "img-src": "img/img-item__bfg6000.png",
+                        "img-width": "144",
+                        "img-height": "128",
+                        "img-alt": "bfg6000",
+                        "title": "Перфоратор BOSCH BFG 6000",
+                        "old-cost": "30500 Р.",
+                        "cost": "25500 P.",
+                        "item-link": "#"
+                        })
+
+                    </div>
+
+                    <div class="catalog__item">
+
+                        @@include("../price-item/price-item.html", {
+                        "second-class": "price-item--bfg2000  price-item--new  price-item--active",
+                        "img-src": "img/img-item__bfg2000.png",
+                        "img-width": "127",
+                        "img-height": "112",
+                        "img-alt": "bfg2000",
+                        "title": "Перфоратор BOSCH BFG 2000",
+                        "old-cost": " ",
+                        "cost": "12500 P.",
+                        "item-link": "#"
+                        })
+
+                    </div>
+
+                    <div class="catalog__item">
+
+                        @@include("../price-item/price-item.html", {
+                        "second-class": "price-item--bfg3000",
+                        "img-src": "img/img-item__bfg3000.png",
+                        "img-width": "127",
+                        "img-height": "112",
+                        "img-alt": "bfg3000",
+                        "title": "Перфоратор BOSCH BFG 3000",
+                        "old-cost": "22500 Р.",
+                        "cost": "15500 P.",
+                        "item-link": "#"
+                        })
+
+                    </div>
+
+                    <div class="catalog__item">
+
+                        @@include("../price-item/price-item.html", {
+                        "second-class": "price-item--bfg6000  price-item--new",
+                        "img-src": "img/img-item__bfg6000.png",
+                        "img-width": "144",
+                        "img-height": "128",
+                        "img-alt": "bfg6000",
+                        "title": "Перфоратор BOSCH BFG 6000",
+                        "old-cost": "30500 Р.",
+                        "cost": "25500 P.",
+                        "item-link": "#"
+                        })
+
+                    </div>
+
+                    <div class="catalog__item">
+
+                        @@include("../price-item/price-item.html", {
+                        "second-class": "price-item--bfg2000",
+                        "img-src": "img/img-item__bfg2000.png",
+                        "img-width": "127",
+                        "img-height": "112",
+                        "img-alt": "bfg2000",
+                        "title": "Перфоратор BOSCH BFG 2000",
+                        "old-cost": " ",
+                        "cost": "12500 P.",
+                        "item-link": "#"
+                        })
+
+                    </div>
+
+                    <div class="catalog__item">
+
+                        @@include("../price-item/price-item.html", {
+                        "second-class": "price-item--bfg3000  price-item--new",
+                        "img-src": "img/img-item__bfg3000.png",
+                        "img-width": "127",
+                        "img-height": "112",
+                        "img-alt": "bfg3000",
+                        "title": "Перфоратор BOSCH BFG 3000",
+                        "old-cost": "22500 Р.",
+                        "cost": "15500 P.",
+                        "item-link": "#"
+                        })
+
+                    </div>
+
+                    <div class="catalog__item">
+
+                        @@include("../price-item/price-item.html", {
+                        "second-class": "price-item--bfg6000",
+                        "img-src": "img/img-item__bfg6000.png",
+                        "img-width": "144",
+                        "img-height": "128",
+                        "img-alt": "bfg6000",
+                        "title": "Перфоратор BOSCH BFG 6000",
+                        "old-cost": "30500 Р.",
+                        "cost": "25500 P.",
+                        "item-link": "#"
+                        })
+
+                    </div>
+
+                    <div class="catalog__item">
+
+                        @@include("../price-item/price-item.html", {
+                        "second-class": "price-item--bfg2000",
+                        "img-src": "img/img-item__bfg2000.png",
+                        "img-width": "127",
+                        "img-height": "112",
+                        "img-alt": "bfg2000",
+                        "title": "Перфоратор BOSCH BFG 2000",
+                        "old-cost": " ",
+                        "cost": "12500 P.",
+                        "item-link": "#"
+                        })
+
+                    </div>
+                    
+                    
+                </div>
+
+                <div class="catalog__pagination">
+
+                    @@include("../pagination/pagination-4.html", {
+                    "second-class": "",
+                    "item1-class": "pagination__active",
+                    "item2-class": "",
+                    "item3-class": "",
+                    "item4-class": "pagination__word",
+                    "item1-text": "1",
+                    "item2-text": "2",
+                    "item3-text": "3",
+                    "item4-text": "Следующая"
+                    })
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

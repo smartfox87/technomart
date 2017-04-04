@@ -1,0 +1,75 @@
+@import "../../scss/variables.scss";
+@import "../../scss/mixins.scss";
+
+/* шаблон вставки в html 
+@@include("../selector-checkbox/selector-checkbox-5.html", {
+"second-class": "selector-checkbox--",
+"legend": "",
+"label1": "",
+"label2": "",
+"label3": "",
+"label4": "",
+"label5": "",
+"checked1": "",
+"checked2": "",
+"checked3": "",
+"checked4": "",
+"checked5": ""
+})
+*/
+
+.selector-checkbox {
+  @include font--second(15px, 20px, #000, normal, uppercase);
+  margin: 0;
+  padding: 0 0 3px;
+
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  outline: none;
+  legend {
+    padding: 15px 0 14px;
+
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 30px;
+  }
+  label {
+    position: relative;
+
+    display: block;
+
+    padding-bottom: 20px;
+    padding-left: 35px;
+    &:hover {
+      i {
+        &::before {
+          color: #b5b5b5;
+        }
+      }
+    }
+    &:active {
+      opacity: 0.3;
+    }
+    i {
+      @include font--icon();
+      &::before {
+        @include pseudo();
+        content: '\2610';
+        top: 4px;
+        left: 0;
+
+        font-size: 28px;
+        color: #c1c1c1;
+      }
+    }
+  }
+  input {
+    display: none;
+    &:checked + i {
+      &::before {
+        content: '\2611';
+      }
+    }
+  }
+
+}

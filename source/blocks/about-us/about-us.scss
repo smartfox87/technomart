@@ -4,12 +4,12 @@
 .about-us {
   padding-bottom: 87px;
   h2 {
-    @include font--title();
+    @include font--first(30px, 40px, #000, normal, uppercase);
     margin: 0;
     padding: 71px 0 16px;
   }
   p {
-    @include font--text();
+    @include font--second(13px, 24px, #000);
     margin: 0;
     padding: 5px 0 19px;
   }
@@ -35,4 +35,5 @@
   margin-bottom: 41px;
 
   background: #e5e5e5 url("../img/bg-map__page.jpg") no-repeat left top;
+  cursor: pointer;
 }

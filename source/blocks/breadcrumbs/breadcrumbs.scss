@@ -1,0 +1,63 @@
+@import "../../scss/variables.scss";
+@import "../../scss/mixins.scss";
+
+/* шаблон вставки в html 
+@@include("../blocks/breadcrumbs/breadcrumbs-4.html", {
+"second-class": "breadcrumbs--",
+"href1": "href=\"#\"",
+"href2": "href=\"#\"",
+"href3": "href=\"#\"",
+"href4": "href=\"#\"",
+"text1": "",
+"text2": "",
+"text3": "",
+"text4": ""
+})
+*/
+
+.breadcrumbs__wrapper {
+  @include container();
+}
+
+.breadcrumbs__list {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.breadcrumbs__item {
+  position: relative;
+
+  padding: 19px 42px 21px 0;
+  &:first-child {
+    padding-right: 35px;
+    a {
+      i {
+        margin-left: -4px;
+      }
+    }
+  }
+  &:last-child {
+    i {
+      display: none;
+    }
+  }
+  i {
+    font-size: 16px;
+    color: #c1c6ce;
+  }
+  a {
+    @include font--second(13px, 18px, #000, normal, uppercase);
+    text-decoration: none;
+  }
+  a + i {
+    position: absolute;
+    top: 20px;
+    right: 11px;
+
+    font-size: 14px;
+  }
+}

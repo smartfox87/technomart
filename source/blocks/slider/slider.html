@@ -1,24 +1,30 @@
 <section class="slider">
 
-    <i class="slider__toggle  slider__togggle--prev  icon-left"></i>
-    <i class="slider__toggle  slider__togggle--next  icon-right"></i>
+    <i class="slider__toggle  slider__toggle--prev  icon-left"></i>
+    <i class="slider__toggle  slider__toggle--next  icon-right"></i>
 
-    <div class="slider__slide-perforators">
+    <div class="slider__slide  slider__slide--perforators  slider__slide--show">
         <h2>Перфораторы</h2>
         <p>Настоящие мужские игрушки</p>
+
         @@include("../btn/btn.html", {
-        "name": "Открыть каталог",
-        "class": "btn--slider",
-        "href": "#"})
+        "second-class": "btn--slider",
+        "attribute": "href=\"#\"",
+        "text": "Открыть каталог"
+        })
+
     </div>
 
-    <div class="slider__slide-drills">
+    <div class="slider__slide  slider__slide--drills">
         <h2>Дрели</h2>
         <p>Соседям на радость!</p>
+
         @@include("../btn/btn.html", {
-        "name": "Открыть каталог",
-        "class": "btn--slider",
-        "href": "#"})
+        "second-class": "btn--slider",
+        "attribute": "href=\"#\"",
+        "text": "Открыть каталог"
+        })
+
     </div>
 
 </section>

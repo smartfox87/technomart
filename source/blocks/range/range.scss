@@ -1,40 +1,68 @@
-@import "../../scss/variables.scss";   
-@import "../../scss/mixins.scss";  
-/* шаблон вставки в html 
+@import "../../scss/variables.scss";
+@import "../../scss/mixins.scss";
 
-*/   
+/* шаблон вставки в html 
+@@include("../range/range.html", {
+"second-class": "range--",
+"title": "",
+"start-label": "",
+"end-label": "",
+"start-value": "",
+"end-value": ""
+})
+*/
 
 .range {
-  
+  @include font--second(17px, 30px, #000, bold, uppercase);
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  outline: none;
+  legend {
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
+  input {
+    @include font--second(17px, 22px, #000);
+    box-sizing: border-box;
+    width: 96px;
+    height: 38px;
+    margin-bottom: 25px;
+    padding: 0 10px 5px 15px;
+
+    text-align: center;
+
+    background: #f7f3ec;
+    border: none;
+    outline: none;
+  }
 }
+
 .range__scale {
   position: relative;
 
   height: 80px;
-  margin-bottom: 15px;
+  margin-bottom: 9px;
 
-  background: #f1f1f1;
-}
+  background: #f7f3ec;
+  &::after,
+  &::before {
+    @include pseudo();
+    top: 39px;
+    left: 20px;
 
-.range__scale::after,
-.range__scale::before {
-  content: "";
-  position: absolute;
-  top: 39px;
-  left: 20px;
+    width: 180px;
+    height: 2px;
 
-  display: block;
+    background: #d7dcde;
+  }
+  &::after {
+    width: 140px;
 
-  width: 200px;
-  height: 2px;
-
-  background: #d7dcde;
-}
-
-.range__scale::after {
-  width: 140px;
-
-  background: #00ca74;
+    background: #00ca74;
+  }
 }
 
 .range__toggle {
@@ -47,20 +75,16 @@
   background: #fff;
   border-radius: 50%;
   box-shadow: 0 2px rgba(0, 1, 1, 0.14);
-}
+  &::before {
+    @include pseudo();
+    top: 10px;
+    left: 10px;
 
-.range__toggle::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 10px;
+    width: 3px;
+    height: 3px;
 
-  display: block;
-
-  width: 3px;
-  height: 3px;
-
-  background: #ababab;
+    background: #ababab;
+  }
 }
 
 .range__toggle--start {
@@ -73,26 +97,7 @@
   left: 159px;
 }
 
-.range label {
-  text-transform: uppercase;
-}
-
 .range__input-start {
-  margin-right: 14px;
+  margin-right: 4px;
 }
 
-.range input {
-  box-sizing: border-box;
-  width: 80px;
-  height: 37px;
-  margin-left: 5px;
-
-  font-size: 16px;
-  line-height: 22px;
-  text-align: center;
-  color: #000;
-
-  background: #f1f1f1;
-  border: none;
-  outline: none;
-}

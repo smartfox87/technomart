@@ -2,7 +2,7 @@
 @import '../../scss/mixins.scss';
 
 /* шаблон вставки в html
-@@include("../main-menu/main-menu.html", {
+@@include("../main-menu/main-menu-5.html", {
 "second-class": "main-menu--",
 "item1-class": "main-menu__item",
 "item2-class": "main-menu__item",
@@ -50,15 +50,21 @@
     }
   }
   a {
-    @include font();
+    @include font--first(17px, 24px, #fff);
     display: block;
 
     padding: 16px 31px 20px 30px;
 
-    font-size: 17px;
-    color: #fff;
     text-decoration: none;
 
     background: #32425c;
+    &:hover {
+      background: #293449;
+    }
+    &:active{
+      color: rgba(255, 255, 255, 0.5);
+
+      background: #1d2739;
+    }
   }
 }

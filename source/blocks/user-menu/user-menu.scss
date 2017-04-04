@@ -1,42 +1,67 @@
 @import '../../scss/variables.scss';
 @import '../../scss/mixins.scss';
 
+/* шаблон вставки в html
+@@include("../user-menu/user-menu-5.html", {
+"second-class": "user-menu--"
+})
+*/
+
 .user-menu {
+  @include font--first(16px, 21px, #000);
 }
 
-.user-menu__join {
+.user-menu--join .user-menu__block-joined {
+  display: none;
+}
+
+.user-menu--joined .user-menu__block-join {
+  display: none;
+}
+
+.user-menu__block-join {
   display: flex;
 
   padding-bottom: 66px;
 }
 
 .user-menu .user-menu__login {
-  position: relative;
-
-  flex-grow: 1;
-
   margin-left: 20px;
-  padding-left: 32px;
-  i {
-    &::before {
-      @include font--icon();
-      content: "\2386";
-      position: absolute;
-      top: 9px;
-      left: 13px;
-
-      display: block;
-
-      width: 22px;
-
-      font-size: 22px;
-      color: #b7bfc8;
-    }
-  }
 }
 
 .user-menu__register {
-  flex-grow: 1;
-
   margin-left: 10px;
+}
+
+.user-menu--joined {
+  padding-bottom: 37px;
+}
+
+.user-menu__links {
+  a {
+    @include font--first(16px, 29px, #32425c);
+    position: relative;
+
+    padding-right: 11px;
+    padding-left: 18px;
+    &:hover {
+      color: #ee3643;
+    }
+    &:active {
+      color: rgba(0, 0, 0, 0.3);
+    }
+    &:nth-child(2) {
+      &::before {
+        @include pseudo();
+        top: 8px;
+        left: 1px;
+
+        width: 4px;
+        height: 4px;
+
+        background: #000;
+        border-radius: 50%;
+      }
+    }
+  }
 }

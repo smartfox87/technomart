@@ -1,0 +1,29 @@
+@import "../../scss/variables.scss";   
+@import "../../scss/mixins.scss";  
+/* шаблон вставки в html 
+@@include("../blocks/catalog-wiki/catalog-wiki.html", {
+"second-class": "",
+"title": "",
+"text": ""
+})
+*/   
+
+.catalog-wiki {
+  padding: 20px 0 50px;
+
+  background: #f2f6f8;
+  h2{
+    @include font--first(30px, 40px, #000, normal, uppercase);
+    margin: 0;
+    padding: 40px 0 21px;
+  }
+  p{
+    @include font--second(13px, 24px, #000);
+    margin: 0;
+    padding: 0 0 20px;
+  }
+}
+
+.catalog-wiki__wrapper{
+  @include container();
+}

@@ -12,6 +12,25 @@
 @@include("../blocks/site-header/site-header--catalog.html")
 <main>
 
+    @@include("../blocks/breadcrumbs/breadcrumbs-4.html", {
+    "second-class": "breadcrumbs--",
+    "href1": "href=\"#\"",
+    "href2": "href=\"#\"",
+    "href3": "href=\"#\"",
+    "href4": "href=\"#\"",
+    "text1": "<i class=\"icon-home\"></i>",
+    "text2": "Каталог",
+    "text3": "Инструмент",
+    "text4": "Перфораторы"
+    })
+    
+    @@include("../blocks/catalog/catalog.html")
+    @@include("../blocks/catalog-wiki/catalog-wiki.html", {
+    "second-class": "",
+    "title": "Пара слов о перфораторах",
+    "text": "Перфоратор — универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.<br>Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта и отбойного молотка. В ассортиментном ряду есть выбор «трехрежимников»: в одном устройстве будут совмещены отбойный молоток и ударная дрель."
+    })
+
 </main>
 @@include("../blocks/site-footer/site-footer.html")
 </body>

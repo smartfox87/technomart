@@ -6,69 +6,63 @@
 
   width: 620px;
   height: 266px;
+  overflow: hidden;
 
   background: #f2f6f8;
   h2 {
-    @include font();
+    @include font--first(36px, 40px, #fff, bold, uppercase);
     margin: 0;
     padding: 0;
-
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 40px;
-    color: #fff;
-    text-transform: uppercase;
   }
   p {
-    @include font--text();
+    @include font--second(18px, 24px, #fff);
     margin: 0;
     padding: 0;
-
-    font-size: 18px;
-    color: #fff;
   }
 }
 
 .slider__toggle {
-  @include font--icon();
   position: absolute;
+  top: 111px;
   z-index: 20;
 
   font-size: 45px;
   color: #fff;
+
+  cursor: pointer;
 }
 
-.slider__togggle--prev {
-  top: 111px;
+.slider__toggle--prev {
   left: 5px;
 }
 
-.slider__togggle--next {
-  top: 111px;
+.slider__toggle--next {
   right: 0;
 }
 
-.slider__slide-perforators,
-.slider__slide-drills {
+.slider__slide {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
 
-  display: flex;
+  display: none;
   flex-direction: column;
 
   box-sizing: border-box;
   width: 620px;
   height: 266px;
   padding: 20px 24px 22px;
+}
 
+.slider__slide--perforators {
   background-image: url("../img/bg-slider__perforators.jpg");
 }
 
-.slider__slide-drills {
-  display: none;
-
+.slider__slide--drills {
   background-image: url("../img/bg-slider__drills.jpg");
+}
 
+.slider__slide--show {
+  display: flex;
 }

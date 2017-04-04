@@ -8,19 +8,24 @@
 */
 
 .logo {
-  @include font--title();
+  @include font--first(24px, 40px, #fff, bold, uppercase);
   display: inline-block;
+
+  box-sizing: border-box;
 
   margin: 0;
   padding: 2px 53px 0;
 
-  font-weight: bold;
-
-  font-size: 24px;
-  color: #fff;
+  text-decoration: none;
 
   background: #ee3643;
   box-shadow: 0 5px #b52933;
+  &:hover {
+    background: #ca2c37;
+  }
+  &:active {
+    background: #ba2732;
+  }
 }
 
 .logo--footer {

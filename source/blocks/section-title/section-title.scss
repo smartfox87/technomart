@@ -1,6 +1,16 @@
 @import '../../scss/variables.scss';
 @import '../../scss/mixins.scss';
 
+/* шаблон вставки в html
+@@include("../section-title/section-title.html", {
+"second-class": "section-title--",
+"title": "",
+"link-name": "",
+"link-class": "btn--",
+"link-href": "#"
+})
+*/
+
 .section-title {
   display: flex;
   justify-content: space-between;
@@ -10,7 +20,7 @@
 
   background: #f7f3ec;
   h2 {
-    @include font--title();
+    @include font--first(30px, 40px, #000, normal, uppercase);
     margin: 0;
     padding: 0;
   }
@@ -18,4 +28,10 @@
 
 .section-title__link {
   vertical-align: middle;
+}
+
+.section-title--catalog{
+  a{
+    display: none;
+  }
 }

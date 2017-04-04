@@ -1,20 +1,32 @@
 <div class="user-menu @@second-class">
-    <div class="user-menu__join">
+    <div class="user-menu__block-join">
 
         @@include("../btn/btn.html", {
-        "class": "btn--user-menu  user-menu__login",
-        "name": "Войти",
-        "href": "#"
+        "second-class": "btn--user-menu  btn--pseudo-left  user-menu__login",
+        "attribute": "href=\"#\"",
+        "text": "<i class=\"icon-login\"></i>Войти"
         })
 
         @@include("../btn/btn.html", {
-        "class": "btn--user-menu  user-menu__register",
-        "name": "Регистрация",
-        "href": "#"
+        "second-class": "btn--user-menu  user-menu__register",
+        "attribute": "href=\"#\"",
+        "text": "Регистрация"
         })
 
     </div>
-    <div class="user-menu-joined">
+    <div class="user-menu__block-joined">
+
+        @@include("../btn/btn.html", {
+        "second-class": "btn--user-menu  btn--pseudo-left  btn--pseudo-right  btn--max-width",
+        "attribute": "href=\"#\"",
+        "text": "<i class=\"icon-user\"></i>Равшан Джамшутович<i class=\"icon-logout\"></i>"
+        })
+
+        <div class="user-menu__links">
+            <a href="#">Мои заказы</a>
+
+            <a href="#">Личный кабинет</a>
+        </div>
 
     </div>
 </div>

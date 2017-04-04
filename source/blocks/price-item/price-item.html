@@ -1,13 +1,31 @@
-<div class="price-item  @@class">
+<div class="price-item  @@second-class">
     <div class="price-item__image">
         <img src="@@img-src" width="@@img-width" height="@@img-height" alt="@@img-alt">
+
+        <div class="price-item__menu">
+
+            @@include("../btn/btn.html", {
+            "second-class": "btn--price-item-buy",
+            "attribute": "href=\"#\"",
+            "text": "<i class=\"icon-basket\"></i>Купить"
+            })
+
+            @@include("../btn/btn.html", {
+            "second-class": "btn--price-item-favorites",
+            "attribute": "href=\"#\"",
+            "text": "В закладки"
+            })
+
+        </div>
+
     </div>
     <h3>@@title</h3>
     <p class="price-item__old-cost">@@old-cost</p>
 
     @@include("../btn/btn.html", {
-    "name": "@@cost",
-    "class": "btn--price-item",
-    "href": "@@item-link"})
+    "second-class": "btn--price-item",
+    "attribute": "href=\"@@item-link\"",
+    "text": "@@cost"
+    })
 
 </div>

@@ -1,0 +1,36 @@
+<section class="modal-message">
+    <div class="modal-message__close"></div>
+
+    <form action="" class="modal-message__form">
+        <div class="modal-message__top">
+
+            <fieldset class="modal-message__user-info">
+
+                <label class="modal-message__name" for="modal-message__name">Ваше имя:
+                    <input id="modal-message__name" type="text" placeholder="Представьтесь, пожалуйста" required>
+                </label>
+
+                <label class="modal-message__mail" for="modal-message__mail">Ваш e-mail:
+                    <input id="modal-message__mail" type="text" placeholder="Для отправки ответа" required>
+                </label>
+
+            </fieldset>
+
+            <label class="modal-message__text" for="modal-message__text">Текст письма:
+                <textarea id="modal-message__text" name="text" rows="4" cols="58">В свободной форме</textarea>
+            </label>
+
+        </div>
+
+        <div class="modal-message__bottom">
+
+            @@include("../btn/btn-button.html", {
+            "second-class": "btn--max-width",
+            "attribute": "type=\"submit\"",
+            "text": "Отправить"
+            })
+
+        </div>
+    </form>
+
+</section>

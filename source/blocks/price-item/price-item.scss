@@ -1,7 +1,22 @@
 @import '../../scss/variables.scss';
 @import '../../scss/mixins.scss';
 
+/* шаблон вставки в html
+@@include("../price-item/price-item.html", {
+"second-class": "price-item--",
+"img-src": "img/.png",
+"img-width": "",
+"img-height": "",
+"img-alt": "",
+"title": "",
+"old-cost": " Р.",
+"cost": " P.",
+"item-link": "#"
+})
+*/
+
 .price-item {
+  @include font--second(18px, 24px, #000);
   display: flex;
   flex-direction: column;
 
@@ -11,45 +26,43 @@
   padding-bottom: 20px;
 
   border: 1px solid #e5e5e5;
+  &:hover {
+    box-shadow: 0 10px 25px rgba(41, 52, 73, 0.5);
+  }
   h3 {
-    @include font__text();
+    @include font--second(18px, 20px, #000, bold);
     margin: 0;
     padding: 0 20px 9px;
 
-    font-weight: bold;
-
-    font-size: 18px;
-    line-height: 20px;
     text-align: center;
   }
 }
 
 .price-item--bfg9000 {
   img {
-    top: 6px;
+    top: 5px;
     left: 16px;
   }
 }
 
 .price-item--bfg3000 {
-img {
+  img {
     top: 28px;
     left: 39px;
   }
 }
 
 .price-item--bfg6000 {
-img {
+  img {
     top: 21px;
-    left: 25px;
+    left: 26px;
   }
 }
 
 .price-item--bfg2000 {
-  background: url("../img/pic-mark__new.png") no-repeat top right;
   img {
-    top: 27px;
-    left: 30px;
+    top: 28px;
+    left: 31px;
   }
 }
 
@@ -57,15 +70,39 @@ img {
   position: relative;
 
   height: 178px;
-  img{
+  img {
     @include img-size();
     position: absolute;
+  }
+}
+
+.price-item__menu {
+  position: absolute;
+  top: 43px;
+  left: 42px;
+
+  display: none;
+
+  width: 135px;
+  height: 125px;
+}
+
+.price-item--active,
+.price-item:hover {
+  .price-item__menu {
+    display: block;
+  }
+  .price-item__image {
+    img {
+      display: none;
+    }
   }
 }
 
 .price-item__old-cost {
   margin: 0;
   padding: 0 0 9px;
+  padding-left: 2px;
 
   font-weight: bold;
   font-size: 17px;
@@ -75,3 +112,6 @@ img {
   text-decoration: line-through;
 }
 
+.price-item--new {
+  background: url("../img/pic-mark__new.png") no-repeat top right;
+}

@@ -1,0 +1,70 @@
+@import "../../scss/variables.scss";
+@import "../../scss/mixins.scss";
+
+/* шаблон вставки в html 
+@@include("../pagination/pagination-4.html", {
+"second-class": "pagination--",
+"item1-class": "pagination__active",
+"item2-class": "",
+"item3-class": "",
+"item4-class": "pagination__word",
+"item1-text": "1",
+"item2-text": "2",
+"item3-text": "3",
+"item4-text": "Следующая"
+})
+*/
+
+.pagination {
+  @include font--second(13px, 18px, #000, normal, uppercase);
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.pagination__item {
+  margin-right: 10px;
+  &:hover {
+    a {
+      border-color: #bdc6ca;
+    }
+  }
+  &:active {
+    a {
+      border-color: #ee3643;
+    }
+  }
+  a {
+    display: block;
+
+    box-sizing: border-box;
+    width: 38px;
+    height: 38px;
+    padding: 8px;
+
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+.pagination__word {
+  a {
+    width: 139px;
+  }
+}
+
+.pagination__active {
+  a {
+    color: #fff;
+
+    background: #ee3643;
+  }
+}

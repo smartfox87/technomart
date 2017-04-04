@@ -2,7 +2,7 @@
 @import '../../scss/mixins.scss';
 
 .site-header {
-  @include font();
+  @include font--first(16px, 21px, #fff);
   box-sizing: border-box;
   padding-bottom: 60px;
 
@@ -29,46 +29,89 @@
   margin: 0;
   padding: 0;
   label {
-    @include font();
-    padding-top: 7px;
-    padding-bottom: 2px;
-    padding-left: 13px;
+    @include font--first(17px, 24px, #fff);
+    box-sizing: border-box;
+    &:hover {
+      i {
+        opacity: 1;
+      }
+    }
+    &:active {
+      color: rgba(255, 255, 255, 0.6);
 
-    font-size: 17px;
-    color: #fff;
+      background: #161d29;
+      input {
+        color: rgba(255, 255, 255, 0.6);
+
+        background: #161d29;
+      }
+    }
+    i {
+      @include font--icon();
+      padding-right: 4px;
+
+      opacity: 0.3;
+    }
   }
   input {
-    @include font();
-    width: 35px;
-
-    font-size: 17px;
-    color: #fff;
+    @include font--first(17px, 24px, #fff);
+    width: 30px;
 
     background: #293449;
     border: none;
     outline: none;
   }
-  i {
-    @include font--icon();
-    padding-right: 4px;
-  }
+}
+
+.site-header__favorites,
+.site-header__cart {
+  width: 150px;
+  padding: 7px 0 2px 15px;
+}
+
+.site-header__favorites {
+  width: 152px;
 }
 
 .site-header__search {
+  position: relative;
+
+  width: 267px;
+
+  background: #000;
+  &:hover {
+    &::after {
+      color: #ee3643;
+    }
+  }
+  &::after {
+    @include pseudo("\1f50d");
+    @include font--icon();
+    top: 11px;
+    left: 15px;
+  }
   input {
-    width: 220px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding-left: 46px;
+    &:focus {
+      color: #000;
+
+      background: #fff;
+    }
   }
 }
 
-.site-header__basket {
+.site-header__cart {
   i {
     padding-right: 9px;
   }
 }
 
-.site-header__basket--catalog {
+.site-header__cart--catalog {
   background: #ee3643;
-  input{
+  input {
     background: #ee3643;
   }
 }
@@ -81,27 +124,21 @@
 }
 
 .site-header__text {
-  @include font();
+  @include font--first(16px, 23px, #ee3643);
   box-sizing: border-box;
   width: 300px;
   margin: 0;
   padding: 0 50px 0 53px;
 
-  font-size: 16px;
-  line-height: 23px;
-  color: #ee3643;
   font-style: italic;
 }
 
 .site-header__contact {
   width: 300px;
   p {
-    @include font();
+    @include font--first(14px, 24px, #000);
     margin: 0;
     padding: 3px 10px;
-
-    font-size: 14px;
-    line-height: 24px;
   }
 }
 

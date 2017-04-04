@@ -1,0 +1,52 @@
+@import "../../scss/variables.scss";
+@import "../../scss/mixins.scss";
+
+/* шаблон вставки в html 
+
+*/
+
+.catalog__wrapper {
+  @include container();
+}
+
+.catalog__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.catalog__column-left {
+  width: 220px;
+}
+
+.catalog__column-right {
+  width: 700px;
+}
+
+.catalog__filter {
+  @include font--second(17px, 30px, #000, bold, uppercase);
+  h2 {
+    margin: 0;
+    padding: 10px 19px;
+
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+
+    background: #f7f3ec;
+  }
+}
+
+.catalog__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.catalog__item {
+  margin-bottom: 20px;
+}
+
+.catalog__pagination{
+  margin-top: 32px;
+  margin-bottom: 59px;
+}

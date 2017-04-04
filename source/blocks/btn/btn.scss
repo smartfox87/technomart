@@ -3,31 +3,33 @@
 
 /* шаблон вставки в html
 @@include("../btn/btn.html", {
-"class": "btn--",
-"name": "",
-"href": "#"
+"second-class": "btn--",
+"attribute": "href=\"#\"",
+"attribute": "type=\"submit\"",
+"text": ""
 })
 */
 
 .btn {
-  @include font();
+  @include font--first(14px, 18px, #fff, 400, uppercase);
   display: inline-block;
+
+  box-sizing: border-box;
 
   padding: 10px 10px;
 
-  font-size: 14px;
-  line-height: 18px;
   text-align: center;
-  color: #fff;
-  text-transform: uppercase;
   text-decoration: none;
 
   background: #ee3643;
+  border: none;
   border-radius: 4px;
+  outline: none;
+  cursor: pointer;
 }
 
 .btn--info-panel {
-  width: 130px;
+  width: 150px;
 
   font-size: 17px;
   line-height: 22px;
@@ -35,33 +37,115 @@
 
   background: #63a63e;
   border-radius: 0;
+  &:hover {
+    background: #5fbb2d;
+  }
+  &:active {
+    background: #518534;
+  }
+}
+
+.btn--user-menu {
+  flex-grow: 1;
+
+  font-size: 21px;
+  line-height: 25px;
+  color: #000;
+  text-transform: none;
+
+  background: #fff;
+  border-radius: 0;
+  &:hover {
+    color: #ee3643;
+    i {
+      color: #000;
+    }
+  }
+  &:active {
+    color: rgba(0, 0, 0, 0.3);
+    i {
+      color: rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+.btn--pseudo-left {
+  position: relative;
+
+  padding-left: 32px;
+  i {
+    position: absolute;
+    top: 10px;
+
+    color: #b7bfc8;
+  }
+  .icon-login {
+    left: 10px;
+
+  }
+  .icon-user {
+    top: 8px;
+    left: 10px;
+
+    font-size: 18px;
+  }
+}
+
+.btn--pseudo-right {
+  padding-right: 54px;
+  &:hover {
+    color: #000;
+    i {
+      color: #000;
+    }
+  }
+  &:active {
+    color: rgba(0, 0, 0, 0.3);
+    i {
+      color: rgba(0, 0, 0, 0.3);
+    }
+  }
+  .icon-logout {
+    top: 10px;
+    right: 5px;
+  }
 }
 
 .btn--features {
-  width: 115px;
+  width: 135px;
   margin-left: 2px;
+
+  color: #fff;
+
+  background: rgba(0, 0, 0, 0.1);
+  &:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  &:active {
+    background: rgba(0, 0, 0, 0.3);
+  }
 }
 
 .btn--slider {
-  width: 173px;
+  width: 196px;
   margin-top: auto;
   padding-left: 13px;
+  &:hover {
+    background: #ca2c37;
+  }
+  &:active {
+    background: #ba2732;
+  }
 }
 
 .btn--price-item {
-  @include font--text();
+  @include font--second(17px, 18px, #fff, bold);
   position: relative;
 
-  box-sizing: border-box;
   width: 125px;
   margin-top: auto;
   margin-left: 42px;
   padding-left: 20px;
-
-  font-weight: bold;
-  font-size: 17px;
-  line-height: 18px;
-  color: #fff;
   &::after {
     @include pseudo();
     @include triangle(#ee3643, right, 19px);
@@ -70,31 +154,74 @@
   }
 }
 
+.btn--price-item-buy {
+  display: block;
+
+  margin-bottom: 8px;
+
+  background: #63a63e;
+  box-shadow: inset 0 -3px #367315;
+  &:hover {
+    background: #5fbb2d;
+    i {
+      opacity: 1;
+    }
+  }
+  &:active {
+    background: #518534;
+    box-shadow: none;
+  }
+  i {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+
+    opacity: 0.3;
+  }
+}
+
+.btn--price-item-favorites {
+  display: block;
+
+  box-sizing: border-box;
+  margin-bottom: 10px;
+
+  color: #32425c;
+
+  background: #fff;
+  box-shadow: inset 0 0 0 3px #63a63e;
+  &:hover {
+    box-shadow: inset 0 0 0 3px #32425c;
+  }
+  &:active {
+    opacity: 0.3;
+  }
+}
+
 .btn--section-title {
-  width: 229px;
+  width: 253px;
   padding-left: 14px;
 }
 
 .btn--services-content {
-  box-sizing: border-box;
   width: 196px;
 }
 
-.btn--user-menu {
-  font-size: 21px;
-  line-height: 25px;
-  color: #000;
-  text-transform: none;
-
-  background: #fff;
-  border-radius: 0;
-}
-
-.btn--about-us{
-  box-sizing: border-box;
+.btn--about-us {
   min-width: 220px;
 }
 
-.btn--max-width{
+.btn--filter {
+  @include font--second(13px, 18px, #000, normal, uppercase);
+  margin-top: 59px;
+  padding: 9px 38px;
+
+  background: #fff;
+  border: 1px solid #e5e5e5;
+}
+
+.btn--max-width {
   display: block;
+
+  width: 100%;
 }

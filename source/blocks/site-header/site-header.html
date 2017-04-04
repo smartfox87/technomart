@@ -5,22 +5,24 @@
             @@include("../logo/logo.html")
 
             <form class="site-header__info-panel" action="" method="get">
+
                 <label class="site-header__search" for="field__search">
-                    <i class="icon-search"></i>
                     <input type="text" name="search" id="field__search" placeholder="Поиск:">
                 </label>
+
                 <label class="site-header__favorites" for="field__favorites"><i class="icon-bookmark"> </i>Закладки:
-                    <input type="text" name="favorites" id="field__favorites" value="0" readonly>
-                </label>
-                <label class="site-header__basket" for="field__basket"><i class="icon-basket"> </i>Корзина:
-                    <input type="text" name="basket" id="field__basket" value="0" readonly>
+                    <input type="text" name="favorites" id="field__favorites" value="0" disabled>
                 </label>
 
-            @@include("../btn/btn.html", {
-            "class": "btn--info-panel",
-            "name": "Оформить заказ",
-            "href": "#"
-            })
+                <label class="site-header__cart" for="field__cart"><i class="icon-basket"> </i>Корзина:
+                    <input type="text" name="cart" id="field__cart" value="0" disabled>
+                </label>
+
+                @@include("../btn/btn.html", {
+                "second-class": "btn--info-panel",
+                "attribute": "href=\"#\"",
+                "text": "Оформить заказ"
+                })
 
             </form>
         </div>
@@ -38,8 +40,8 @@
             <div class="site-header__contact">
 
                 @@include("../phone-number/phone-number.html", {
-                "second-class": "",
-                "number": "+7 (812) 555-05-55"
+                "second-class": "phone-number--icon-font",
+                "number": "<i class=\"icon-phone\"></i>+7 (812) 555-05-55"
                 })
 
                 <p>
@@ -48,7 +50,11 @@
             </div>
 
             <div class="site-heder__user-block">
-                @@include("../user-menu/user-menu.html")
+
+                @@include("../user-menu/user-menu.html", {
+                "second-class": "user-menu--join"
+                })
+
             </div>
 
         </div>

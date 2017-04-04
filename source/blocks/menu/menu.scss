@@ -2,18 +2,18 @@
 @import '../../scss/mixins.scss';
 
 /* шаблон вставки в html
-@@include("../menu/menu.html", {
+@@include("../menu/menu-5.html", {
 "second-class": "menu--",
 "item1-href": "#",
 "item2-href": "#",
 "item3-href": "#",
 "item4-href": "#",
 "item5-href": "#",
-"item1-name": "",
-"item2-name": "",
-"item3-name": "",
-"item4-name": "",
-"item5-name": "",
+"item1-text": "",
+"item2-text": "",
+"item3-text": "",
+"item4-text": "",
+"item5-text": "",
 "item1-class": "menu__item",
 "item2-class": "menu__item",
 "item3-class": "menu__item",
@@ -39,9 +39,16 @@
     }
   }
   a {
-    @include font();
-    color: #f1f5f7;
+    @include font--first(18px, 24px, #f1f5f7);
     text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:active {
+      text-decoration: none;
+
+      opacity: 0.5;
+    }
   }
 }
 
@@ -51,12 +58,7 @@
 
 .menu--footer-second {
   padding-left: 23px;
-  li {
-    &:nth-child(4) {
-      padding-right: 0;
-    }
-  }
-  a{
+  a {
     color: #ffd180;
   }
 }

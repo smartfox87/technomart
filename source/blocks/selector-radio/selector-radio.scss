@@ -1,0 +1,70 @@
+@import "../../scss/variables.scss";
+@import "../../scss/mixins.scss";
+
+/* шаблон вставки в html 
+@@include("../selector-radio/selector-radio-2.html", {
+"second-class": "selector-radio--",
+"legend": "",
+"label1": "",
+"label2": "",
+"checked1": "",
+"checked2": ""
+})
+*/
+
+.selector-radio {
+  @include font--second(14px, 20px, #000, normal, uppercase);
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  outline: none;
+  legend {
+    padding: 15px 0 14px;
+
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 30px;
+    letter-spacing: 0.6px;
+  }
+  label {
+    position: relative;
+
+    display: block;
+
+    padding-bottom: 20px;
+    padding-left: 35px;
+    &:hover {
+      i {
+        &::before {
+          color: #b5b5b5;
+        }
+      }
+    }
+    &:active {
+      opacity: 0.3;
+    }
+    i {
+      @include font--icon();
+      &::before {
+        @include pseudo();
+        content: '\25cb';
+        top: 4px;
+        left: 0;
+
+        font-size: 28px;
+        color: #c1c1c1;
+      }
+    }
+  }
+  input {
+    display: none;
+    &:checked + i {
+      &::before {
+        content: '\25cf';
+      }
+    }
+  }
+
+}

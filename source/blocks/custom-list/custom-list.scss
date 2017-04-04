@@ -2,7 +2,7 @@
 @import '../../scss/mixins.scss';
 
 /*  шаблон вставки
-@@include("../custom-list/custom-list.html", {
+@@include("../custom-list/custom-list-3.html", {
 "second-class": "custom-list--",
 "content1": "",
 "content2": "",
@@ -11,7 +11,7 @@
 */
 
 .custom-list {
-  @include font();
+  @include font--first(18px, 24px, #000);
   margin: 0;
   padding: 0;
 

@@ -6,16 +6,18 @@
   padding-top: 3px;
 
   background: #f2f6f8;
+  p {
+    @include font--second(13px, 24px, #000);
+  }
 }
 
 .services__title {
-  @include font--title();
+  @include font--first(30px, 40px, #000, normal, uppercase);
   margin: 55px 0 21px;
   padding: 0;
 }
 
 .services__text {
-  @include font--text();
   margin: 0 0 34px;
   padding: 0;
 }
@@ -51,17 +53,15 @@
 }
 
 .services__categorie-name {
-  @include font();
+  @include font--first(21px, 30px, #fff, bold);
   margin: 0;
   padding: 12px 22px 19px;
 
-  font-weight: bold;
-
-  font-size: 21px;
-  line-height: 30px;
-  color: #fff;
-
   background: #32425c;
+  cursor: pointer;
+  &:hover {
+    background: #293449;
+  }
 }
 
 .services__categorie-name--active {
@@ -82,15 +82,11 @@
   height: 280px;
   padding-left: 80px;
   h4 {
-    @include font();
+    @include font--first(36px, 24px, #000, normal, uppercase);
     margin: 0;
     padding: 3px 0 30px;
-
-    font-size: 36px;
-    text-transform: uppercase;
   }
   p {
-    @include font--text();
     margin: 0;
     padding: 0 0 28px;
   }

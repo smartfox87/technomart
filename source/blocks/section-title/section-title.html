@@ -1,12 +1,13 @@
-<div class="section-title">
+<div class="section-title @@second-class">
     <h2>@@title</h2>
 
     <div class="section-title__link">
 
         @@include("../btn/btn.html", {
-        "name": "@@link-name",
-        "class": "@@link-class",
-        "href": "@@link-href"})
+        "second-class": "@@link-class",
+        "attribute": "href=\"@@link-href\"",
+        "text": "@@link-name"
+        })
 
     </div>
 </div>

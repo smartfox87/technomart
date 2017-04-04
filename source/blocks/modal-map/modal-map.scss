@@ -1,0 +1,56 @@
+@import "../../scss/variables.scss";   
+@import "../../scss/mixins.scss";  
+/* шаблон вставки в html 
+
+*/   
+
+.modal-map {
+  position: fixed;
+  bottom: 355px;
+  left: 50%;
+  z-index: 20;
+
+  display: none;
+
+  box-sizing: border-box;
+  width: 940px;
+  height: 446px;
+  margin-left: -470px;
+
+  background: #fff url("../img/bg-map__modal.jpg") no-repeat top left;
+  box-shadow: 0 0 16px rgba(35, 31, 32, 0.5);
+}
+
+.modal-map--show {
+  display: block;
+}
+
+.modal-map__close {
+  position: absolute;
+  top: -7px;
+  right: -43px;
+
+  width: 40px;
+  height: 40px;
+
+  cursor: pointer;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 7px;
+
+    display: block;
+
+    width: 26px;
+    height: 6px;
+
+    background: #ee3643;
+
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
