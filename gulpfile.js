@@ -15,10 +15,9 @@ const include = require('gulp-file-include');
 const sort = require('postcss-sorting');
 const sourcemaps = require('gulp-sourcemaps');
 const gulpIf = require('gulp-if');
-const newer = require('gulp-newer');
 const cssnano= require('gulp-cssnano');
 
-const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 // Запуск сортировки свойств в стилевых файлах
 gulp.task('sorting', function () {
@@ -311,6 +310,12 @@ gulp.task('copy', function () {
         .pipe(gulp.dest('build'));
 });
 
+// Запуск копирования файлов скриптов в папку сборки при их изменении
+gulp.task('js', function () {
+   return gulp.src('source/js/**')
+       .pipe(gulp.dest('build/js'));
+});
+
 // Запуск сборки стилевого файла
 gulp.task('style', function () {
     console.log('---------- сборка CSS');
@@ -357,10 +362,7 @@ gulp.task('watch', function () {
     gulp.watch('source/blocks/**/*.scss', gulp.series('style'));
     gulp.watch('source/pages/*.html', gulp.series('html'));
     gulp.watch('source/blocks/**/*.html', gulp.series('html'));
-    gulp.watch(['source/fonts/**/*.{woff,woff2}',
-        'source/img/**',
-        'source/js/**'
-    ], gulp.series('copy'));
+    gulp.watch('source/js/**', gulp.series('js'));
 });
 
 // Запуск сервера
@@ -372,6 +374,7 @@ gulp.task('serve', function () {
     });
     server.watch('build/css/*.css').on('change', server.reload);
     server.watch('build/*.html').on('change', server.reload);
+    server.watch('build/js/**/*.js').on('change', server.reload);
 });
 
 // Запуск разработки проекта
@@ -382,9 +385,19 @@ gulp.task('default',
         gulp.parallel('watch', 'serve')));
 
 // Отправка в GH pages (ветку gh-pages репозитория)
-gulp.task('deploy', function() {
+gulp.task('deploy2', function() {
     const ghPages = require('gulp-gh-pages');
     console.log('---------- Публикация содержимого ./build/ на GH pages');
     return gulp.src('./build' + '**/*')
+        .pipe(ghPages());
+});
+
+// Отправка в GH pages (ветку gh-pages репозитория)
+gulp.task('deploy', function() {
+    const ghPages = require('gulp-gh-pages');
+    console.log('---------- Публикация содержимого ./build/ на GH pages');
+    return gulp.src('./build/**/*', {
+        base: 'build'
+    })
         .pipe(ghPages());
 });
